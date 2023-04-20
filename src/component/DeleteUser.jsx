@@ -4,11 +4,11 @@ import { useParams } from 'react-router'
 
 function DeleteUser() {
   // useParamsを通じてusernameが取り
-  let LoginUsername =sessionStorage.getItem("loginUsername")
+  let loginUsername =sessionStorage.getItem("loginUsername")
   const [userData,setUserData] = useState([]);
   const {username} = useParams();
   useEffect(()=>{
-  axios.get("http://localhost:8080/delete/"+{LoginUsername,username})
+  axios.get("http://localhost:8080/delete/"+username)
   .then(response =>{
     setUserData(response.data[0]);
   })
@@ -19,7 +19,7 @@ function DeleteUser() {
  const deleteAPI =(e)=>{
 
   e.preventDefault();
-  axios.post("http://localhost:8080/delete/",{username},
+  axios.post("http://localhost:8080/delete/",{loginUsername,username},
   {
     headers: {
       'Content-Type': 'application/json'

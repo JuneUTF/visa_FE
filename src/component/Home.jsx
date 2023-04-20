@@ -8,8 +8,8 @@ function Home() {
   return (
     <div>
         <h1>Đây là Home</h1>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
+        <Link to={`/delete/${LoginUsername}`}>削除</Link>
+        <Link to="/logout">ログアウト</Link>
     </div>
   )
 }

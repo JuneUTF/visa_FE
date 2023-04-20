@@ -25,7 +25,7 @@ function Login() {
           console.log(response.data)
           sessionStorage.setItem("loginUsername", response.data.username);
           setMessenger("");
-          navigate("/mypage");
+          navigate("/");
         }
       })
     .catch(error => {
@@ -66,7 +66,7 @@ function Login() {
                 <p>{messenger}</p>
               </div>
               <button type="submit" className="btn btn-primary my-2">
-                Submit
+                  ログイン
               </button>
             </form>
           </div>
